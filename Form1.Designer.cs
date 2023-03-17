@@ -28,20 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            blaBlaTextbox = new TextBox();
             generateButton = new Button();
             SuspendLayout();
             // 
-            // textBox1
+            // blaBlaTextbox
             // 
-            textBox1.Location = new Point(53, 30);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(715, 23);
-            textBox1.TabIndex = 0;
+            blaBlaTextbox.Location = new Point(41, 24);
+            blaBlaTextbox.Multiline = true;
+            blaBlaTextbox.Name = "blaBlaTextbox";
+            blaBlaTextbox.ScrollBars = ScrollBars.Vertical;
+            blaBlaTextbox.Size = new Size(715, 299);
+            blaBlaTextbox.TabIndex = 0;
             // 
             // generateButton
             // 
-            generateButton.Location = new Point(53, 355);
+            generateButton.Location = new Point(41, 358);
             generateButton.Name = "generateButton";
             generateButton.Size = new Size(104, 41);
             generateButton.TabIndex = 1;
@@ -55,7 +57,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(generateButton);
-            Controls.Add(textBox1);
+            Controls.Add(blaBlaTextbox);
             Name = "mainForm";
             Text = "MainForm";
             ResumeLayout(false);
@@ -64,7 +66,7 @@
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox blaBlaTextbox;
         private Button generateButton;
     }
 }
