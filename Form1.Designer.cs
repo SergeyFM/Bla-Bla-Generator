@@ -59,7 +59,7 @@
             Controls.Add(generateButton);
             Controls.Add(blaBlaTextbox);
             Name = "mainForm";
-            Text = "MainForm";
+            Text = "Bla bla generator";
             ResumeLayout(false);
             PerformLayout();
         }

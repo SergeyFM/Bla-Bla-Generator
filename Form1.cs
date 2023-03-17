@@ -12,6 +12,7 @@ namespace WinFormsAppDemo
         private void generateButton_Click(object sender, EventArgs e)
         {
             String[] words = "\r\n \r\n bla la dada kaba bum bam tam lam sam ham baba papa mama baba saka daka puki muki nea tam net moi tebe mne".Split(' ');
+            String[] punctuation = ". . . . . ! ?".Split(' ');
 
             int last = words.Length - 1;
             Random rnd = new Random();
@@ -33,6 +34,10 @@ namespace WinFormsAppDemo
                 {
                     space = "";
                     theFirstWordFlag = true;
+                    if (!punctuation.Contains(blaText.Trim().Last().ToString()))
+                    {
+                        blaText = blaText.Trim() + punctuation[rnd.Next(punctuation.Length)];
+                    }
                 }
 
                 blaText += randomWord + space;
