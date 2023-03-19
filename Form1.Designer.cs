@@ -32,6 +32,7 @@
             generateButton = new Button();
             btnSave = new Button();
             btnLoad = new Button();
+            btnClear = new Button();
             SuspendLayout();
             // 
             // blaBlaTextbox
@@ -62,7 +63,7 @@
             btnSave.TabIndex = 2;
             btnSave.Text = "SAVE";
             btnSave.UseVisualStyleBackColor = true;
-            btnSave.Click += generateButton_Click;
+            btnSave.Click += btnSave_Click;
             // 
             // btnLoad
             // 
@@ -72,7 +73,17 @@
             btnLoad.TabIndex = 2;
             btnLoad.Text = "LOAD";
             btnLoad.UseVisualStyleBackColor = true;
-            btnLoad.Click += generateButton_Click;
+            btnLoad.Click += btnLoad_Click;
+            // 
+            // btnClear
+            // 
+            btnClear.Location = new Point(176, 358);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(58, 41);
+            btnClear.TabIndex = 2;
+            btnClear.Text = "CLEAR";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // mainForm
             // 
@@ -80,6 +91,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnLoad);
+            Controls.Add(btnClear);
             Controls.Add(btnSave);
             Controls.Add(generateButton);
             Controls.Add(blaBlaTextbox);
@@ -95,5 +107,6 @@
         private Button generateButton;
         private Button btnSave;
         private Button btnLoad;
+        private Button btnClear;
     }
 }
