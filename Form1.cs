@@ -39,7 +39,7 @@ namespace WinFormsAppDemo
                 {
                     space = "";
                     theFirstWordFlag = true;
-                    if (!punctuation.Contains((blaText+" ").Trim().Last().ToString()))
+                    if (!punctuation.Contains((blaText + " ").Trim().Last().ToString()))
                     {
                         blaText = blaText.Trim() + punctuation[rnd.Next(punctuation.Length)];
                     }

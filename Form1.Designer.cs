@@ -42,7 +42,7 @@
             blaBlaTextbox.Multiline = true;
             blaBlaTextbox.Name = "blaBlaTextbox";
             blaBlaTextbox.ScrollBars = ScrollBars.Vertical;
-            blaBlaTextbox.Size = new Size(715, 299);
+            blaBlaTextbox.Size = new Size(714, 299);
             blaBlaTextbox.TabIndex = 0;
             // 
             // generateButton
@@ -96,7 +96,7 @@
             Controls.Add(generateButton);
             Controls.Add(blaBlaTextbox);
             Name = "mainForm";
-            Text = "Bla bla generator";
+            Text = "Bla-bla generator";
             ResumeLayout(false);
             PerformLayout();
         }

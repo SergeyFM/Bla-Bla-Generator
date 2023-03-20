@@ -6,10 +6,17 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <BaseOutputPath>.</BaseOutputPath>
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+    <AssemblyName>BlaBlaGenerator</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="LiteDB" Version="5.0.16" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="release\" />
   </ItemGroup>
 
 </Project>
