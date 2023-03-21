@@ -11,4 +11,5 @@ The window consists of four elements:
 * "Clear" button - removes all text from the text window;
 * "Save" button - saves the text from the text windows to the local database;
 * "Load" button - loads text from the local database into the text window;
-* "Export" button - exports the text to a text file "bla-bla.txt".
+* "Export" button - exports the text to a text file "bla-bla.txt";
+* "Import" button - imports text from the "bla-bla.txt" and puts it into text window.

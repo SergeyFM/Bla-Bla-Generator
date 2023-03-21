@@ -34,6 +34,7 @@
             btnLoad = new Button();
             btnClear = new Button();
             btnExport = new Button();
+            btnImport = new Button();
             SuspendLayout();
             // 
             // blaBlaTextbox
@@ -58,7 +59,7 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(240, 358);
+            btnSave.Location = new Point(265, 358);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(58, 41);
             btnSave.TabIndex = 2;
@@ -68,7 +69,7 @@
             // 
             // btnLoad
             // 
-            btnLoad.Location = new Point(304, 358);
+            btnLoad.Location = new Point(329, 358);
             btnLoad.Name = "btnLoad";
             btnLoad.Size = new Size(58, 41);
             btnLoad.TabIndex = 2;
@@ -88,7 +89,7 @@
             // 
             // btnExport
             // 
-            btnExport.Location = new Point(368, 358);
+            btnExport.Location = new Point(419, 358);
             btnExport.Name = "btnExport";
             btnExport.Size = new Size(58, 41);
             btnExport.TabIndex = 2;
@@ -96,11 +97,22 @@
             btnExport.UseVisualStyleBackColor = true;
             btnExport.Click += btnExport_Click;
             // 
+            // btnImport
+            // 
+            btnImport.Location = new Point(483, 358);
+            btnImport.Name = "btnImport";
+            btnImport.Size = new Size(58, 41);
+            btnImport.TabIndex = 2;
+            btnImport.Text = "IMPORT";
+            btnImport.UseVisualStyleBackColor = true;
+            btnImport.Click += btnImport_Click;
+            // 
             // mainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnImport);
             Controls.Add(btnExport);
             Controls.Add(btnLoad);
             Controls.Add(btnClear);
@@ -121,5 +133,6 @@
         private Button btnLoad;
         private Button btnClear;
         private Button btnExport;
+        private Button btnImport;
     }
 }

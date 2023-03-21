@@ -80,8 +80,27 @@ namespace WinFormsAppDemo
 
         private async void btnExport_Click(object sender, EventArgs e)
         {
-            String txt = blaBlaTextbox.Text;
-            await File.WriteAllTextAsync("bla-bla.txt", txt);
+            try
+            {
+                String txt = blaBlaTextbox.Text;
+                await File.WriteAllTextAsync("bla-bla.txt", txt);
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private async void btnImport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                String txt = await File.ReadAllTextAsync("bla-bla.txt");
+                blaBlaTextbox.Text=txt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
