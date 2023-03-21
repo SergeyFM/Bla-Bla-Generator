@@ -77,5 +77,11 @@ namespace WinFormsAppDemo
         {
             blaBlaTextbox.Text = "";
         }
+
+        private async void btnExport_Click(object sender, EventArgs e)
+        {
+            String txt = blaBlaTextbox.Text;
+            await File.WriteAllTextAsync("bla-bla.txt", txt);
+        }
     }
 }

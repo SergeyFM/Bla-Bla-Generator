@@ -33,6 +33,7 @@
             btnSave = new Button();
             btnLoad = new Button();
             btnClear = new Button();
+            btnExport = new Button();
             SuspendLayout();
             // 
             // blaBlaTextbox
@@ -51,7 +52,7 @@
             generateButton.Name = "generateButton";
             generateButton.Size = new Size(104, 41);
             generateButton.TabIndex = 1;
-            generateButton.Text = "Generate it!";
+            generateButton.Text = "GENERATE!";
             generateButton.UseVisualStyleBackColor = true;
             generateButton.Click += generateButton_Click;
             // 
@@ -85,11 +86,22 @@
             btnClear.UseVisualStyleBackColor = true;
             btnClear.Click += btnClear_Click;
             // 
+            // btnExport
+            // 
+            btnExport.Location = new Point(368, 358);
+            btnExport.Name = "btnExport";
+            btnExport.Size = new Size(58, 41);
+            btnExport.TabIndex = 2;
+            btnExport.Text = "EXPORT";
+            btnExport.UseVisualStyleBackColor = true;
+            btnExport.Click += btnExport_Click;
+            // 
             // mainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnExport);
             Controls.Add(btnLoad);
             Controls.Add(btnClear);
             Controls.Add(btnSave);
@@ -108,5 +120,6 @@
         private Button btnSave;
         private Button btnLoad;
         private Button btnClear;
+        private Button btnExport;
     }
 }
