@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LiteDB;
+﻿using LiteDB;
 
-namespace WinFormsAppDemo.mod
-{
-    internal class db
-    {
+namespace WinFormsAppDemo.mod {
+    internal class db {
         public LiteDatabase DB;
         public db() {
             DB = new(@"data.db");
-        
+
         }
         public void Save(DbData obj) {
             var data = DB.GetCollection<DbData>();
