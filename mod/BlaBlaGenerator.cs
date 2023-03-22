@@ -1,7 +1,8 @@
 ﻿namespace WinFormsAppDemo.mod {
     internal class BlaBlaGenerator {
+        private static String[] words = "\r\n \r\n bla la dada kaba bum bam tam lam sam ham baba papa mama baba saka daka puki muki nea tam net moi tebe mne kriba lata krum blakadasa malaka taduka bik pra eiru takuk tra bit tra prita dla".Split(' '); 
         public String Generate() {
-            String[] words = "\r\n \r\n bla la dada kaba bum bam tam lam sam ham baba papa mama baba saka daka puki muki nea tam net moi tebe mne kriba lata krum blakadasa malaka taduka bik pra eiru takuk tra".Split(' ');
+
             String[] punctuation = ". . . . . ! ?".Split(' ');
 
             int last = words.Length - 1;
