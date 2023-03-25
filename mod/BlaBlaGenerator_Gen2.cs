@@ -17,10 +17,14 @@ namespace WinFormsAppDemo.mod {
         // list of the most popular tourist destinations
         private static readonly String[] destinations = {
             "Paris", "London", "Rome", "New York", "Barcelona", "Berlin", "Madrid", "Prague", "Vienna", "Amsterdam", "Brussels", "Budapest", "Warsaw", "Dublin", "Copenhagen", "Stockholm", "Athens", "Edinburgh", "Oslo", "Lisbon", "Reykjavik", "Moscow", "Beijing", "Tokyo", "Hong Kong", "Bangkok", "Singapore", "Sydney", "Melbourne", "Perth", "Auckland", "Cape Town", "Rio de Janeiro", "Buenos Aires", "Santiago", "Mexico City", "Lima", "Bogota", "Caracas", "Belize City", "San Jose", "San Salvador", "Managua", "Panama City", "Havana", "Santo Domingo", "Kingston", "Port-au-Prince", "Nassau", "San Juan", "Bridgetown", "Port of Spain", "Castries", "Kingstown", "Roseau", "Saint George's", "Saint John's", "Basseterre", "Charlotte Amalie", "Willemstad", "Oranjestad" };
-        
+        // list of punctuation marks
+        private static readonly String[] punctuation = ". . . . . ! ?".Split(' ');
 
+        public string Generate() {
+            Random rnd = new Random();
+            // TODO: implement sentence generation algorithm.
 
-
+            return "";
         
 
 
