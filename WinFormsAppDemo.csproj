@@ -12,10 +12,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="mod\BlaBlaGenerator_Gen2.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="LiteDB" Version="5.0.16" />
   </ItemGroup>
 

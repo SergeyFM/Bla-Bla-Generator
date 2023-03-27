@@ -8,7 +8,7 @@ namespace WinFormsAppDemo {
         }
 
         private void generateButton_Click(object sender, EventArgs e) {
-            BlaBlaGenerator blaBlaGenerator = new();
+            BlaBlaGenerator_Gen2 blaBlaGenerator = new();
             blaBlaTextbox.Text = blaBlaGenerator.Generate(); 
         }
 
