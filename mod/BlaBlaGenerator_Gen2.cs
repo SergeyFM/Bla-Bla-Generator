@@ -28,7 +28,7 @@ namespace WinFormsAppDemo.mod {
         // list of miningless inserts
         private static readonly String[] inserts = { "don't know how to put it", "it's like", "whatever", "it's never easy to say", "so to say" };
         // list of verbs
-        private static readonly String[] verbs = { "go", "think", "love", "don't like", "see" };
+        private static readonly String[] verbs = { "move", "think", "love", "don't like", "see" };
         // list of nouns
         private static readonly String[] nouns = { "dog", "cat", "car", "house", "tree", "flower", "sun", "moon", "star", "planet", "universe", "life", "death", "sun", "book", "phone" };
 
@@ -72,12 +72,17 @@ namespace WinFormsAppDemo.mod {
 
         // sentence patterns
         private static readonly String[] sentence_patterns = {
-            "[P] [V] the [N] .",
-            "[P] [V] the [N] !",
-            "[P] [I] [V] the [N] .",
-            "[I] [P] [V] the [N] .",
-            "[P] [V] the [N] [Z] [I] [P] [V] the [N] .",
+            "[P] [V] the [N].",
+            "[P] [V] the [N]!",
+            "[P] [I] [V] the [N].",
+            "[I] [P] [V] the [N].",
+            "[P] [V] the [N], [I] [P] [V] the [N].",
+            "[I] [P] [V] the [N]... [V] [P] the [N]."
         };
+
+        public BlaBlaGenerator_Gen2() {
+
+        }
 
         // randomly add return carrige and new line symbols, or empty space
         private static String RandomNewLine() {
@@ -87,18 +92,21 @@ namespace WinFormsAppDemo.mod {
 
         
 
-        public string Generate() {
+        public String Generate() {
             Random rnd = new Random();
             String text = "";
             for (int sentence_number = 0; sentence_number < NUMBER_OF_SENTENCES; sentence_number++) {
                 String sentence = sentence_patterns[rnd.Next(sentence_patterns.Length)];
                 String[] words = sentence.Split(' ');
                 for (int word_number = 0; word_number < words.Length; word_number++) {
-                    String word = words[word_number];
+                    String[] block = words[word_number].Split("]");
+                    String word,tail;
+                    word = block.First() + "]";
+                    tail = block.Length > 1 ? block[1] : "";
                     if (word.StartsWith("[") && word.EndsWith("]")) {
                         String word_request = MarkToWordRequest(word);
                         if (word_request != "") {
-                            words[word_number] = GetWord(word_request);
+                            words[word_number] = GetWord(word_request) + tail;
                         }
                     }
                 }
@@ -109,6 +117,12 @@ namespace WinFormsAppDemo.mod {
             }
 
             return text;
+        }
+
+        private static String RemoveAfter(String value, String character) {
+            int index = value.IndexOf(character);
+            if (index > 0) value = value.Substring(0,index + 1);
+            return value;
         }
 
     }
