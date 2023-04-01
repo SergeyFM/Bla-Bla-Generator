@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 namespace WinFormsAppDemo.mod {
     internal class BlaBlaGenerator_Gen2 {
 
-        private const int NUMBER_OF_SENTENCES = 20;
+        public const int DEFAULT_NUMBER_OF_SENTENCES = 20;
+        public const int MAXIMUM_NUMBER_OF_SENTENCES = 1001;
+        private int numberOfSentences = DEFAULT_NUMBER_OF_SENTENCES;
 
         // list of punctuation marks
         private static readonly String[] punctuation = { ".", ",", "!", "..." };
@@ -74,7 +76,7 @@ namespace WinFormsAppDemo.mod {
         private static readonly String[] sentence_patterns = {
             "[P] [V] the [N].",
             "[P] [V] the [N]!",
-            "[P] [I] [V] the [N].",
+            "[P] [I], [V] the [N].",
             "[I] [P] [V] the [N].",
             "[P] [V] the [N], [I] [P] [V] the [N].",
             "[I] [P] [V] the [N]... [V] [P] the [N]."
@@ -90,15 +92,31 @@ namespace WinFormsAppDemo.mod {
             return rnd.Next(1,4) == 1 ? "\r\n" : " ";
         }
 
-        
+        public String Generate(int num_sen) {
+
+            // sanity check
+            numberOfSentences = LimitNumberOfSenteces(num_sen);
+            
+            return Generate();
+        }
+
+        public int LimitNumberOfSenteces(int num_sen) {
+            int numOfSent = 0;
+            if (num_sen < 0) numOfSent = DEFAULT_NUMBER_OF_SENTENCES;
+            else if (num_sen > MAXIMUM_NUMBER_OF_SENTENCES) numOfSent = MAXIMUM_NUMBER_OF_SENTENCES;
+            else numOfSent = num_sen;
+            return numOfSent;
+        }
 
         public String Generate() {
             Random rnd = new Random();
             String text = "";
-            for (int sentence_number = 0; sentence_number < NUMBER_OF_SENTENCES; sentence_number++) {
+            for (int sentence_number = 0; sentence_number < numberOfSentences; sentence_number++) {
                 String sentence = sentence_patterns[rnd.Next(sentence_patterns.Length)];
                 String[] words = sentence.Split(' ');
+                
                 for (int word_number = 0; word_number < words.Length; word_number++) {
+                    Console.WriteLine(words[word_number]);
                     String[] block = words[word_number].Split("]");
                     String word,tail;
                     word = block.First() + "]";

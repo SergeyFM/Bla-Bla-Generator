@@ -9,7 +9,12 @@ namespace WinFormsAppDemo {
 
         private void generateButton_Click(object sender, EventArgs e) {
             BlaBlaGenerator_Gen2 blaBlaGenerator = new();
-            blaBlaTextbox.Text = blaBlaGenerator.Generate(); 
+            int numberOfSentences = 0;
+            numberOfSentences = int.TryParse("0" + textBox_NumberOfSentences.Text, out numberOfSentences) ? numberOfSentences : 0 ;
+            numberOfSentences = blaBlaGenerator.LimitNumberOfSenteces(numberOfSentences);
+            textBox_NumberOfSentences.Text = numberOfSentences.ToString();
+            textBox_NumberOfSentences.Refresh();
+            blaBlaTextbox.Text = blaBlaGenerator.Generate(numberOfSentences);
         }
 
         private void btnSave_Click(object sender, EventArgs e) {
@@ -46,6 +51,20 @@ namespace WinFormsAppDemo {
                 blaBlaTextbox.Text = txt;
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void mainForm_Load(object sender, EventArgs e) {
+
+        }
+
+        private void textBox_NumberOfSentences_Enter(object sender, EventArgs e) {
+
+        }
+
+        private void textBox_NumberOfSentences_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                generateButton_Click(sender, e);
             }
         }
     }
