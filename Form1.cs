@@ -10,7 +10,7 @@ namespace WinFormsAppDemo {
         private void generateButton_Click(object sender, EventArgs e) {
             BlaBlaGenerator_Gen2 blaBlaGenerator = new();
             int numberOfSentences = 0;
-            numberOfSentences = int.TryParse("0" + textBox_NumberOfSentences.Text, out numberOfSentences) ? numberOfSentences : 0 ;
+            numberOfSentences = int.TryParse("0" + textBox_NumberOfSentences.Text, out numberOfSentences) ? numberOfSentences : 0;
             numberOfSentences = blaBlaGenerator.LimitNumberOfSenteces(numberOfSentences);
             textBox_NumberOfSentences.Text = numberOfSentences.ToString();
             textBox_NumberOfSentences.Refresh();

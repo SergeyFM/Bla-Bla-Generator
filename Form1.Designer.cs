@@ -32,6 +32,9 @@
             btnImport = new Button();
             textBox_NumberOfSentences = new TextBox();
             label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
             SuspendLayout();
             // 
             // blaBlaTextbox
@@ -118,17 +121,47 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(204, 400);
+            label1.Location = new Point(223, 400);
             label1.Name = "label1";
             label1.Size = new Size(59, 15);
             label1.TabIndex = 4;
             label1.Text = "sentences";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(556, 400);
+            label2.Name = "label2";
+            label2.Size = new Size(67, 15);
+            label2.TabIndex = 5;
+            label2.Text = "to/from DB";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(710, 400);
+            label3.Name = "label3";
+            label3.Size = new Size(77, 15);
+            label3.TabIndex = 6;
+            label3.Text = "to/from a file";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(407, 400);
+            label4.Name = "label4";
+            label4.Size = new Size(69, 15);
+            label4.TabIndex = 7;
+            label4.Text = "the window";
             // 
             // mainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(textBox_NumberOfSentences);
             Controls.Add(btnImport);
@@ -156,5 +189,8 @@
         private Button btnImport;
         private TextBox textBox_NumberOfSentences;
         private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
     }
 }
