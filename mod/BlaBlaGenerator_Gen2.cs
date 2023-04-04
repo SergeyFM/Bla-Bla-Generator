@@ -89,7 +89,9 @@ namespace WinFormsAppDemo.mod {
         // randomly add return carrige and new line symbols, or empty space
         private static String RandomNewLine() {
             Random rnd = new Random();
-            return rnd.Next(1,4) == 1 ? "\r\n" : " ";
+            return rnd.Next(1,4) == 1 ? "\r\n" :
+                   rnd.Next(1,12) == 1 ? "\r\n\r\n" : 
+                " ";
         }
 
         public String Generate(int num_sen) {
