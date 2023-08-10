@@ -14,3 +14,5 @@ The window consists of four elements:
 * "Load" button - loads text from the local database into the text window;
 * "Export" button - exports the text to a text file "bla-bla.txt";
 * "Import" button - imports text from the "bla-bla.txt" and puts it into text window.
+
+Definitely need further development :)
